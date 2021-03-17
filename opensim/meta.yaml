@@ -9,9 +9,9 @@ package:
 
 source:
 #    path: /home/kidzik/workspace/opensim-core
-    git_url: https://github.com/opensim-org/opensim-core.git
-    git_rev: 20d53d6c1145024d100af15acfd8609ee35a5b6a #4.1 release
-  
+    git_url: https://github.com/vbotics/opensim-core.git
+    git_tag: fix_conda_4.1 #4.1 release
+
 build:
     number: 12
     # NOTE : For C++11 builds, vc14/VS 2015 are the only acceptable targets
@@ -25,14 +25,14 @@ build:
 
 requirements:
   run:
-        - python
+        - python # [not osx]
         # - openblas
-        - freeglut
+        - freeglut # [not osx]
   build:
         - swig # [not win]
-        - toolchain
+        - toolchain # [not osx]
         - cmake >=3.15 # [not win]
-        - python
+        - python # [not osx]
 
 about:
     home: http://opensim.stanford.edu
